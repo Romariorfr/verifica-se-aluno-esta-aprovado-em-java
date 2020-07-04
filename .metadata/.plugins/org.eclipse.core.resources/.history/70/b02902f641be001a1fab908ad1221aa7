@@ -1,0 +1,37 @@
+package Application;
+import java.util.Scanner;
+import entities.Student;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Student student = new Student();
+		
+		System.out.println("Nome:");
+		student.name = sc.nextLine();
+		
+		System.out.println("Note 1:");
+		student.note1 = sc.nextFloat();
+		
+		System.out.println("Note 2:");
+		student.note2 = sc.nextFloat();
+		
+		System.out.println("Note 3:");
+		student.note3 = sc.nextFloat();
+		
+		float finalGrade = student.finalGrade();
+		System.out.printf("FINAL GRADE: %.2f",finalGrade);
+		
+		student.result();
+		
+		
+		
+		
+		
+		
+		sc.close();
+
+	}
+
+}

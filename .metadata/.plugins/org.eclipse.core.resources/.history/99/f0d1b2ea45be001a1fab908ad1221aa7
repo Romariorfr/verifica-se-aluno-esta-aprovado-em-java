@@ -1,0 +1,38 @@
+package Application;
+import java.util.Scanner;
+import entities.Student;
+
+public class Program {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		//creating a student
+		Student student = new Student();
+		
+		//get student data
+		System.out.println("Nome:");
+		student.name = sc.nextLine();
+		System.out.println("Note 1:");
+		student.note1 = sc.nextDouble();
+		System.out.println("Note 2:");
+		student.note2 = sc.nextDouble();
+		System.out.println("Note 3:");
+		student.note3 = sc.nextDouble();
+		
+		//show final grade
+		System.out.printf("FINAL GRADE: %.2f",student.finalGrade());
+		System.out.println();
+		
+		//print if pass or not
+		student.result();
+		
+		//show how many point need to be approved
+		if(student.finalGrade() < 60) {
+			student.missingPoints();
+		}
+		
+		sc.close();
+	}
+
+}
